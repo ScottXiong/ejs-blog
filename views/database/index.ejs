@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog</title>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.js"></script>
+  </head>
+  <body>
+    <h1><a href="/">Blog</a></h1>
+    <div class="row">
+    	<h4>前后端知识积累-<%= title %></h4>
+	    <ul class="list-group col-md-2">
+		  <li class="list-group-item active">Mysql</li>
+		  <li class="list-group-item">Mongodb</li>
+		  <li class="list-group-item">Oracle</li>
+		  <li class="list-group-item">JDBC</li>
+		  <li class="list-group-item">mongoose的使用</li>
+	    </ul>
+	    <div class="col-md-10">
+	    	<h4>简介：</h4>
+	    	<table class="table table-bordered table-striped table-hover">
+             <tr>
+               <td>words</td>
+               <td>meaning</td>
+               <td>words</td>
+               <td>meaning</td>
+             </tr>
+             <tr>
+              <%= worlds.forEach(function(item){)%>
+               <td><%= item.name %></td>
+               <td><%= item.meaning %></td>
+               <%})%>
+             </tr>
+        </table>
+	    </div>
+    </div>
+    <script>
+    	$(function(){
+        var words=[
+           {name:"11",meaning:''}
+        ]
+    		$('.list-group-item').on('mouseover',function(){
+    			$(this).addClass('active').siblings().removeClass('active')
+    		})
+      	})
+    </script>
+  </body>
+</html>
